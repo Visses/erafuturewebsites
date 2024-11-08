@@ -1,6 +1,9 @@
 @media (max-width: 480px) {
     
-    
+    body {
+        overflow-x: hidden; /* Evita o scroll horizontal */
+      }
+      
     section {
        
         box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.2); /* ajuste a cor conforme o gradiente */
