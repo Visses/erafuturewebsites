@@ -827,7 +827,7 @@ body.popup-open {
     position: fixed; /* Fixa o ícone na tela */
     bottom: 20px; /* Distância do fundo da tela */
     right: 20px; /* Distância da lateral direita da tela */
-    z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+    z-index: 1; /* Garante que o ícone fique acima de outros elementos */
     animation: pulseGlow 2s infinite; /* Aplica a animação de brilho pulsante */
     width: 60px; /* Largura do ícone (igual ao tamanho da imagem) */
     height: 60px; /* Altura do ícone */
