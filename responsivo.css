@@ -1,8 +1,5 @@
 @media (max-width: 480px) {
     
-    * {
-        box-sizing: border-box;
-      }
 
     body {
         overflow-x: hidden; /* Evita o scroll horizontal */
