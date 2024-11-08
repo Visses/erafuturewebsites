@@ -84,7 +84,7 @@ z-index: 4;
 .cards-container {
 display: block;
 align-items: center;
-width: 85%;
+width: 60%;
 margin: 0 auto;
 }
 
@@ -121,32 +121,3 @@ margin: 0 auto;
 }
 
 
-
-@media (max-width: 360px) {
-.cards-container {
-    display: block;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
-    }
-}
-
-
-@media (max-width: 375px) {
-    .cards-container {
-        display: block;
-        align-items: center;
-        width: 88%;
-        margin: 0 auto;
-        }
-    }
-
-
-    @media (max-width: 393px) {
-        .cards-container {
-            display: block;
-            align-items: center;
-            width: 89%;
-            margin: 0 auto;
-            }
-        }
