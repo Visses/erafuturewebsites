@@ -1,92 +1,131 @@
-/* Media Query para dispositivos com largura máxima de 480px */
 @media (max-width: 480px) {
+    
+      .whatsapp-icon {
+        right: 10px; /* Ajuste a posição para telas pequenas */
+        bottom: 10px;
+        width: 50px;  /* Tamanho menor do ícone em telas pequenas */
+        height: 50px;
+    }
 
-    /* Ajuste do ícone do WhatsApp */
-    .whatsapp-icon {
-      right: 10px;
-      bottom: 10px;
-      width: 50px;
-      height: 50px;
-    }
-  
-    /* Impedir o scroll horizontal */
     body {
-      overflow-x: hidden; /* Evita o scroll horizontal */
-    }
-  
-    /* Ajustes na Navbar */
+        overflow-x: hidden; /* Evita o scroll horizontal */
+      }
+
+    section {
+       
+        box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.2); /* ajuste a cor conforme o gradiente */
+      }
+   
+   
     .navbar {
-      justify-content: center; /* Alinha a navbar centralizada */
-      padding: 0 10px; /* Ajusta o padding para telas pequenas */
+        justify-content: space-around;
     }
-  
-    .navbar .logo img {
-      width: 150px; /* Ajuste o tamanho da logo para se adaptar à tela pequena */
-      left: 0; /* Ajuste o valor de 'left' */
-    }
-  
-    /* Ajuste as seções para que fiquem dentro da tela */
-    .sessao1 {
-      background-size: cover; /* Ajuste o tamanho do background para manter a proporção */
-      background-repeat: no-repeat;
-    }
-  
-    .sessao2 {
-      height: auto; /* Remova a altura fixa, ajuste para se adaptar ao conteúdo */
-      box-shadow: none; /* Remova o box-shadow se ele estiver causando distorção */
-    }
-  
-    .sessao-servicos {
-      position: relative;
-      top: 0; /* Remova o 'top' para evitar deslocamentos */
-    }
-  
-    .sessao-cta {
-      font-size: 1rem; /* Ajuste o tamanho da fonte para não ocupar muito espaço */
-      top: 0;
-    }
-  
-    .cta-btn {
-      z-index: 1; /* Ajuste o z-index */
-    }
-  
-    /* Tabela e Cartões */
-    #sessao-tabela {
-      margin: 0;
-      padding: 50px 10px; /* Ajuste o padding para telas menores */
-    }
-  
-    .tabela-precos {
-      width: 100%; /* Ajuste a largura para se adaptar a tela */
-      font-size: 1rem;
-    }
-  
-    .cartao-fidelidade, .ofertas {
-      max-width: 100%; /* Certifique-se de que os cartões não ultrapassem a tela */
-    }
-  
-    .card-img {
-      max-width: 100%;
-      margin-bottom: 10px; /* Reduza o espaçamento para dispositivos móveis */
-    }
-  
-    /* Sessões específicas */
-    .sessao11, .sessao12, .sessao13 {
-      height: auto; /* Ajuste a altura das seções */
-      padding-top: 0;
-    }
-  
-    .sessao-cta2 {
-      position: relative;
-      top: 0; /* Remova o 'top' para não sair da tela */
-      height: auto; /* Ajuste a altura */
-    }
-  
-    /* Ajuste para o popup de contrato */
-    .contract-popup-content {
-      position: relative;
-      left: 0;
-      top: 0;
-    }
+
+    
+  .navbar .logo img {
+    position: relative;
+    left: -40%;    
   }
-  
+
+ 
+  .sessao1 {
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+
+.sessao2 {
+    height: 340px;
+    box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.2); /* ajuste a cor conforme o gradiente */
+    z-index: 1;
+}
+
+
+
+    .sessao-servicos {
+        position: relative;
+        top: -37%;
+        z-index: 0;
+    }
+
+    .sessao-cta {
+        font-size: 0.6rem;
+        position: relative;
+        top: -54%;
+    }
+
+    
+.cta-btn {
+    z-index: 2;
+}
+
+#sessao-tabela p {
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+
+#sessao-tabela {
+    margin: 0;
+    padding: 150px 10px;
+}
+
+.tabela-precos {
+width: 95%;
+font-size: 0.8rem;
+z-index: 4;
+}
+
+.cartao-fidelidade {
+    max-width: 90%;
+    max-height: 40%;
+}
+
+.ofertas {
+    max-width: 90%;
+}
+
+
+.card-img {
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+
+.cards-container {
+display: block;
+}
+
+
+
+.sessao11 {
+    height: 700px;
+}
+
+
+.sessao12 {
+    height: 400px;
+}
+
+.sessao13 {
+    height: 340px;
+    padding-top: 320px;
+}
+
+.sessao-cta2 {
+    position: relative;
+    top: 70%;
+    height: 300px;
+}
+
+
+
+.contract-popup-content {
+    position: relative;
+    left: 0%;
+    top: 0%;
+}
+
+}
+
+
