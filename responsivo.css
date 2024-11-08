@@ -1,0 +1,152 @@
+@media (max-width: 480px) {
+    
+    
+    section {
+       
+        box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.2); /* ajuste a cor conforme o gradiente */
+      }
+   
+   
+    .navbar {
+        justify-content: space-around;
+    }
+
+    
+  .navbar .logo img {
+    position: relative;
+    left: -40%;    
+  }
+
+ 
+  .sessao1 {
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+
+.sessao2 {
+    height: 340px;
+    box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.2); /* ajuste a cor conforme o gradiente */
+    z-index: 1;
+}
+
+
+
+    .sessao-servicos {
+        position: relative;
+        top: -37%;
+        z-index: 0;
+    }
+
+    .sessao-cta {
+        font-size: 0.6rem;
+        position: relative;
+        top: -54%;
+    }
+
+    
+.cta-btn {
+    z-index: 2;
+}
+
+#sessao-tabela p {
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+
+#sessao-tabela {
+    margin: 0;
+    padding: 150px 10px;
+}
+
+.tabela-precos {
+width: 95%;
+font-size: 0.8rem;
+z-index: 4;
+}
+
+.cartao-fidelidade {
+    max-width: 90%;
+    max-height: 40%;
+}
+
+.ofertas {
+    max-width: 90%;
+}
+
+
+.card-img {
+    margin-bottom: 20px;
+}
+
+
+.cards-container {
+display: block;
+align-items: center;
+width: 85%;
+margin: 0 auto;
+}
+
+
+
+.sessao11 {
+    height: 700px;
+}
+
+
+.sessao12 {
+    height: 400px;
+}
+
+.sessao13 {
+    height: 340px;
+    padding-top: 320px;
+}
+
+.sessao-cta2 {
+    position: relative;
+    top: 70%;
+    height: 300px;
+}
+
+
+
+.contract-popup-content {
+    position: relative;
+    left: 0%;
+    top: 0%;
+}
+
+}
+
+
+
+@media (max-width: 360px) {
+.cards-container {
+    display: block;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .cards-container {
+        display: block;
+        align-items: center;
+        width: 88%;
+        margin: 0 auto;
+        }
+    }
+
+
+    @media (max-width: 393px) {
+        .cards-container {
+            display: block;
+            align-items: center;
+            width: 89%;
+            margin: 0 auto;
+            }
+        }

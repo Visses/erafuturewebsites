@@ -1,0 +1,863 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #00000059;
+    height: 80px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    width: 96%;
+    z-index: 999;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #555;
+    border-radius: 5px;
+  }
+
+
+  .navbar .logo img {
+    width: 210px; /* Tamanho da logo */
+    
+  }
+
+  .navbar .menu {
+    display: flex;
+    gap: 1rem;
+  }
+
+
+/* Estilos do Popup */
+.google-form-popup {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 2001; /* Fica em cima do conteúdo da página */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    overflow: auto; /* Permite rolagem se necessário */
+}
+
+.google-form-popup-content {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid ;
+    border-image: linear-gradient(to right, #e2a636, #FFD700) 1; /* Alterar a borda no hover */
+    width: 80%;
+    max-width: 600px; /* Limita a largura do popup */
+    border-radius: 8px;
+}
+
+/* Estilos do botão de fechar */
+.close-google-form {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-google-form:hover {
+    color: black;
+}
+
+
+/* Quando o popup estiver aberto, ocultar a rolagem da página */
+body.popup-open {
+    overflow: hidden;
+}
+
+
+
+  .sessao1 {
+    height: 450px;
+    background-image: url(img/2292582-fundo-de-banner-elegante-em-preto-e-dourado-vetor.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-boasvindas {
+    width: 600px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+.sessao2 {
+    height: 150px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.9), 
+        rgba(10, 10, 10, 0.7)
+    );
+    padding-top: 50px;
+}
+
+.card- {
+    width: 80vw;
+    max-width: 600px; /* Limita a largura máxima */
+    margin: auto;
+    background-color: #0d0d0d; /* Fundo preto suave */
+    border: 3px solid ; /* Inicialmente transparente */
+    padding: 20px;
+    color: white;
+    text-align: center; /* Centraliza o texto */
+    transition: transform 0.3s ease;
+    border-image: linear-gradient(to right, #e2a636, #FFD700) 1; /* Alterar a borda no hover */
+    
+}
+
+
+.card-:hover {
+    transform: scale(1.05); /* Efeito de zoom no hover */
+        transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        box-shadow: 0 4px 15px rgb(235, 180, 29); /* Adiciona sombra ao passar o mouse */
+        cursor: pointer;
+    
+}
+
+.card- h2 {
+    margin-bottom: 15px; /* Espaço entre o título e o texto */
+    color: #FFD700;
+}
+
+.card- p {
+    margin-bottom: 20px; /* Espaço entre o texto e o botão */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #FFD700, #e2a636cc); /* Botão com gradiente */
+    color: black;
+    text-decoration: none;
+    border-radius: 5px; /* Bordas arredondadas no botão */
+    transition: background-color 0.3s, border 0.3s; /* Transição suave na mudança de cor */
+    border: 2px solid transparent; /* Inicialmente transparente */
+    border-image: linear-gradient(to right, #FFD700, #e2a636cc) 1; /* Gradiente nas bordas do botão */
+}
+
+.btn:hover {
+    background-color: #e2a636; /* Efeito hover */
+    border-image: linear-gradient(to right, #e2a636, #FFD700) 1; /* Alterar a borda no hover */
+}
+
+
+.popup {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000; /* Acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escurecido */
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.4s ease; /* Transição de opacidade */
+}
+
+.popup.show {
+    display: flex; /* Exibe como flexbox */
+    opacity: 1; /* Torna visível */
+}
+
+.popup-content {
+    background-color: #0d0d0d; /* Fundo do card */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px;
+    width: 80%;
+    max-width: 500px; /* Largura máxima */
+    color: white; /* Cor do texto */
+    position: relative; /* Para posicionar o botão de fechar */
+    transform: scale(0.8); /* Começa um pouco menor */
+    transition: transform 0.4s ease; /* Transição suave */
+    max-height: 80vh; /* Define a altura máxima do popup como 80% da altura da tela */
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+    padding-right: 10px; /* Espaço para que a barra de rolagem não sobreponha o conteúdo */
+}
+
+.popup.show .popup-content {
+    transform: scale(1); /* Escala para o tamanho normal */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+
+/* Estilização da barra de rolagem no popup */
+.popup-content::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+    border-radius: 5px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background-color: #FFD700; /* Cor da barra de rolagem */
+    border-radius: 5px;
+    border: 2px solid #e2a636cc; /* Cor da borda ao redor da barra */
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background-color: #e2a636; /* Cor da barra ao passar o mouse */
+}
+
+.sessao3 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.7), 
+        rgba(10, 10, 10, 0.9)
+    );
+    
+}
+
+.sessao-servicos {
+    
+    text-align: center;
+}
+
+.sessao-servicos h2 {
+    color: #FFD700;
+    
+}
+
+.servicos-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-servico {
+    background-color: #0d0d0d;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #FFD700, #e2a636cc) 1;
+}
+
+.card-servico:hover {
+    transform: scale(1.05); /* Efeito de zoom no hover */
+        transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        box-shadow: 0 4px 15px rgb(235, 180, 29); /* Adiciona sombra ao passar o mouse */
+        cursor: pointer;
+    
+}
+
+.card-servico h3 {
+    margin: 0 0 10px 0; /* Removendo margem superior */
+    color: #FFD700;
+}
+
+.card-servico p {
+    margin-bottom: 15px;
+}
+
+.sessao-cta {
+    padding: 50px 20px; /* Espaçamento interno */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo levemente escurecido para destaque */
+    color: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+    margin-bottom: 50px; /* Espaço entre a CTA e a seção de serviços */
+    height: 170px;
+    position: relative;
+    top: -20%;
+    
+}
+
+
+
+.sessao-cta h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+
+
+.cta-btn {
+    padding: 15px 40px;
+    background: linear-gradient(to right, #FFD700, #e2a636cc); /* Gradiente vibrante */
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #FFD700, #e2a636cc) 1;
+    transition: all 0.4s ease;
+    box-shadow: 2px 5px 10px rgb(231, 195, 33);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(226, 166, 54, 0.3));
+    z-index: -1;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.cta-btn:hover::before {
+    transform: translateY(-50%) scaleX(1);
+    transform-origin: left;
+}
+
+.cta-btn:hover {
+    background-color: #e2a636;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+.sessao4 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.9), 
+        rgba(10, 10, 10, 0.7)
+    );
+ 
+}
+
+.sessao-servicos {
+    padding: 140px 20px; /* Espaçamento superior e inferior */
+    
+    color: white;
+    text-align: center;
+}
+
+.sessao-servicos h2 {
+    margin-bottom: 20px;
+    color: #FFD700; /* Dourado */
+}
+
+.sessao-servicos p {
+    margin-bottom: 30px;
+}
+
+.tabela-precos {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse; /* Remove espaçamento entre as células */
+}
+
+.tabela-precos th, .tabela-precos td {
+    border: 1px solid #FFD700; /* Bordas douradas */
+    padding: 15px;
+    text-align: center;
+}
+
+.tabela-precos th {
+    background-color: #333; /* Fundo escuro para o cabeçalho */
+}
+
+.tabela-precos tr:nth-child(even) {
+    background-color: #444; /* Fundo cinza para linhas pares */
+}
+
+
+.cartao-fidelidade {
+    height: 300px;
+    width: 350px;
+        text-align: center; /* Centraliza o texto dentro do div */
+        margin: 40px auto; /* Margem automática para centralizar o bloco */
+        max-width: 600px; /* Largura máxima do cartão, ajuste conforme necessário */
+        padding: 20px; /* Espaçamento interno */
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo levemente escurecido para destaque */
+        border-radius: 10px; /* Bordas arredondadas */
+        color: white; /* Cor do texto */
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+    
+
+
+    .cartao-fidelidade:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do cartão */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra mais intensa */
+    }
+
+    .cartao-fidelidade img {
+        max-width: 100%; /* Para que a imagem se ajuste ao tamanho do contêiner */
+        height: auto; /* Manter a proporção da imagem */
+    }
+    
+    .cartao-fidelidade h2 {
+        margin-bottom: 20px; /* Espaço entre o título e a imagem */
+        font-size: 1.8em; /* Tamanho da fonte do título */
+    }
+    
+    .cartao-fidelidade p {
+        font-size: 1.2em; /* Tamanho da fonte da descrição */
+        margin-top: 10px; /* Espaço acima da descrição */
+    }
+
+
+    .ofertas {
+        height: 650px;
+        width: 620px;
+        text-align: center; /* Centraliza o texto dentro do div */
+        padding: 40px 20px; /* Espaçamento interno */
+       background-color: rgba(0, 0, 0, 0.7); /* Fundo levemente escurecido para destaque */
+        border-radius: 10px; /* Bordas arredondadas */
+        margin: 40px auto; /* Margem automática para centralizar */
+        max-width: 800px; /* Largura máxima */
+    }
+    
+    .oferta {
+        margin: 20px 0; /* Margem entre as ofertas */
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para as ofertas */
+        border-radius: 8px; /* Bordas arredondadas */
+        padding: 20px; /* Espaçamento interno */
+        transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    }
+    
+    .oferta:hover {
+        transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        box-shadow: 0 4px 15px rgb(235, 180, 29); /* Adiciona sombra ao passar o mouse */
+        cursor: pointer;
+    }
+    
+    .oferta h3 {
+        margin-bottom: 10px; /* Espaço abaixo do título */
+        color: #FFD700;
+    }
+    
+
+    .oferta p {
+        margin-bottom: 15px; /* Espaço abaixo do texto */
+    }
+    
+
+.projetos-destaque {
+    text-align: center; /* Centraliza o texto */
+    padding: 40px 20px; /* Espaçamento interno */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo levemente escurecido para destaque */
+    margin: 40px auto; /* Margem automática para centralizar */
+    max-width: 1000px; /* Largura máxima */
+    border-radius: 10px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 80px; /* Espaço entre os cards */
+}
+
+.card-img {
+    position: relative; /* Para posicionamento relativo das descrições */
+    width: 350px; /* Ajuste a largura conforme necessário */
+    height: 200px; /* Ajuste a altura conforme necessário */
+    overflow: hidden; /* Oculta partes que saem do container */
+}
+
+.mySlides {
+    display: none; /* Oculta todas as imagens por padrão */
+    opacity: 0; /* Torna todas as imagens invisíveis inicialmente */
+    position: absolute; /* Mantém as imagens no mesmo local */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura da imagem */
+    height: 100%; /* Altura da imagem */
+    transition: opacity 0.5s ease; /* Transição suave */
+}
+
+.mySlides.fade {
+    transition: opacity 1s ease-in-out; /* Transição suave para fade */
+}
+
+.mySlides.active {
+    display: block; /* Exibe a imagem ativa */
+    opacity: 1; /* Torna a imagem ativa visível */
+}
+
+.card-img img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do card */
+    height: 100%; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+    border-radius: 10px; /* Para bordas arredondadas, se necessário */
+}
+
+.text {
+    color: white; /* Cor do texto */
+    padding: 15px; /* Espaçamento interno */
+    display: none; /* Inicialmente oculta todas as descrições */
+}
+
+
+
+.sessao-cta2 {
+    padding: 50px 20px; /* Espaçamento interno */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo levemente escurecido para destaque */
+    color: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+    margin-bottom: 50px; /* Espaço entre a CTA e a seção de serviços */
+    height: 170px;
+    position: relative;
+    top: 10%;
+    
+}
+
+
+.sessao-cta2 h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+.sessao-cta2 h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+
+.sessao5 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.7), 
+        rgba(10, 10, 10, 0.9)
+    );
+    
+}
+
+.sessao6 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.9), 
+        rgba(10, 10, 10, 0.7)
+    );
+ 
+}
+
+.sessao7 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.7), 
+        rgba(10, 10, 10, 0.9)
+    );
+    
+}
+
+
+.sessao8 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.9), 
+        rgba(10, 10, 10, 0.7)
+    );
+ 
+}
+
+
+.sessao9 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.7), 
+        rgba(10, 10, 10, 0.9)
+    );
+    
+}
+
+
+.sessao10 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.9), 
+        rgba(10, 10, 10, 0.7)
+    );
+ 
+}
+
+
+.sessao11 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.7), 
+        rgba(10, 10, 10, 0.9)
+    );
+    
+}
+
+
+.sessao12 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.9), 
+        rgba(10, 10, 10, 0.7)
+    );
+ 
+}
+
+
+.sessao13 {
+    height: 300px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(10, 10, 10, 0.7), 
+        rgba(10, 10, 10, 0.9)
+    );
+    display: flex;             /* Usa flexbox para layout */
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;       /* Centraliza verticalmente */
+    
+}
+
+.contract-popup {
+    position: fixed;
+    z-index: 1000; /* Acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escurecido */
+    display: flex;             /* Usa flexbox para layout */
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;       /* Centraliza verticalmente */
+}
+
+.contract-popup-content {
+    background-color: #0d0d0d; /* Fundo do card */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px;
+    width: 80%;
+    max-width: 500px; /* Largura máxima */
+    color: white; /* Cor do texto */
+    position: relative; /* Para posicionar o botão de fechar */
+    transform: scale(0.8); /* Começa um pouco menor */
+    transition: transform 0.4s ease; /* Transição suave */
+    max-height: 70vh; /* Define a altura máxima do conteúdo */
+    overflow-y: auto; /* Ativa a barra de rolagem vertical */
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    text-align: center;
+}
+
+.contract-popup.show {
+    display: flex; /* Exibe como flexbox */
+    opacity: 1; /* Torna visível */
+}
+
+
+.contract-popup.show .contract-popup-content {
+    transform: scale(1); /* Escala para o tamanho normal */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+
+.contrato-img {
+    max-width: 100%;
+    height: auto; /* Para manter a proporção */
+}
+
+.card {
+    background-color: #0d0d0d;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #FFD700, #e2a636cc) 1;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de zoom no hover */
+        transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        box-shadow: 0 4px 15px rgb(235, 180, 29); /* Adiciona sombra ao passar o mouse */
+        cursor: pointer;
+    
+}
+
+.card a {
+    margin-top: 15px;
+}
+
+
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+/* Estilização da barra de rolagem no popup */
+.contract-popup-content::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.contract-popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+    border-radius: 5px;
+}
+
+.contract-popup-content::-webkit-scrollbar-thumb {
+    background-color: #FFD700; /* Cor da barra de rolagem */
+    border-radius: 5px;
+    border: 2px solid #e2a636cc; /* Cor da borda ao redor da barra */
+}
+
+.contract-popup-content::-webkit-scrollbar-thumb:hover {
+    background-color: #e2a636; /* Cor da barra ao passar o mouse */
+}
+
+
+
+/* Estilo do contêiner dos QR Codes */
+.qr-codes {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os QR Codes */
+    
+}
+
+/* Estilo individual dos QR Codes */
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    width: 80px; /* Largura dos QR Codes */
+    height: 80px; /* Altura dos QR Codes */
+    border-radius: 8px; /* Borda arredondada opcional */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+}
+
+.qr-code p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333; /* Cor do texto */
+}
+
+
+/* CSS */
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    background-color: #111;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 0px;
+}
+
+/* CSS para posicionar o ícone do WhatsApp no canto inferior direito */
+.whatsapp-icon {
+    position: fixed; /* Fixa o ícone na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da lateral direita da tela */
+    z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+    animation: pulseGlow 2s infinite; /* Aplica a animação de brilho pulsante */
+    width: 60px; /* Largura do ícone (igual ao tamanho da imagem) */
+    height: 60px; /* Altura do ícone */
+    border-radius: 50%; /* Torna o fundo redondo */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-icon img {
+    width: 70px; /* Tamanho do ícone dentro do fundo */
+    height: 70px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Faz a imagem se ajustar bem dentro do fundo */
+    transition: transform 0.3s ease;
+}
+
+/* Animação para o efeito de pulsação de brilho */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7); /* Brilho suave no início */
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 1); /* Brilho forte no meio */
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7); /* Brilho suave no final */
+    }
+}
+
+/* Efeito de hover para o ícone do WhatsApp */
+.whatsapp-icon:hover img {
+    transform: scale(1.1); /* Aumenta o ícone quando o mouse passa por cima */
+}
+
+
+
